@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Verifier - Printflow Innovation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      color: #2C3E50;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #2ECC71;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #27AE60;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #34495E;
+    }
+
+    .error {
+      color: #E74C3C;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Certificate Verifier</h1>
+    <p>Enter your certificate number to verify its authenticity.</p>
+    <input type="text" id="certificateNumber" placeholder="Enter certificate number">
+    <button onclick="verifyCertificate()">Verify</button>
+
+    <div id="result" class="result"></div>
+    <div id="error" class="error"></div>
+  </div>
+
+  <script>
+    // Sample certificate data for two interns
+    const certificates = {
+      'C2024-001': { name: 'Mehwish Azmi', course: 'Product Development', date: '10th May – 10th August, 2024' },
+      'C2024-002': { name: 'John Doe', course: 'Graphic Design', date: '1st June – 30th August, 2024' }
+    };
+
+    function verifyCertificate() {
+      // Get the entered certificate number
+      const certNumber = document.getElementById('certificateNumber').value.trim();
+      
+      // Clear previous results or errors
+      document.getElementById('result').innerHTML = '';
+      document.getElementById('error').innerHTML = '';
+
+      // Check if certificate number exists
+      if (certificates[certNumber]) {
+        const certData = certificates[certNumber];
+        document.getElementById('result').innerHTML = `
+          <strong>Certificate Verified!</strong><br>
+          Name: ${certData.name}<br>
+          Course: ${certData.course}<br>
+          Date: ${certData.date}
+        `;
+      } else {
+        document.getElementById('error').innerHTML = 'Invalid certificate number. Please try again.';
+      }
+    }
+  </script>
+</body>
+</html>
