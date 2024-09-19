@@ -6,65 +6,122 @@
   <title>Certificate Verifier - Printflow Innovation</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1B1B1B;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      color: #ECF0F1;
     }
 
     .container {
       text-align: center;
-      background-color: #fff;
-      padding: 30px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
+      background-color: #2C3E50;
+      padding: 40px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      width: 400px;
+      max-width: 90%;
+      border: 2px solid #16A085;
     }
 
     h1 {
-      color: #2C3E50;
+      color: #1ABC9C;
       margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 600;
     }
 
     input[type="text"] {
-      width: 80%;
-      padding: 10px;
+      width: 85%;
+      padding: 12px;
       margin: 20px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      border-radius: 8px;
+      border: 1px solid #16A085;
+      background-color: #34495E;
+      color: #ECF0F1;
+    }
+
+    input[type="text"]::placeholder {
+      color: #7F8C8D;
     }
 
     button {
-      background-color: #2ECC71;
+      background-color: #1ABC9C;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 25px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-size: 1rem;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #27AE60;
+      background-color: #16A085;
+    }
+
+    .result, .error {
+      margin-top: 20px;
+      font-size: 1rem;
+      padding: 15px;
+      border-radius: 8px;
     }
 
     .result {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #34495E;
+      color: #2ECC71;
+      background-color: #273746;
     }
 
     .error {
       color: #E74C3C;
-      font-size: 16px;
-      margin-top: 20px;
+      background-color: #641E16;
+    }
+
+    .branding {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .branding img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .branding h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ECF0F1;
+    }
+
+    /* Add responsive behavior */
+    @media (max-width: 500px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="branding">
+      <img src="https://via.placeholder.com/50" alt="Printflow Logo"> <!-- Replace with actual logo -->
+      <h2>Printflow Innovation</h2>
+    </div>
     <h1>Certificate Verifier</h1>
     <p>Enter your certificate number to verify its authenticity.</p>
     <input type="text" id="certificateNumber" placeholder="Enter certificate number">
